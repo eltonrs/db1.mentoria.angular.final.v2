@@ -16,13 +16,13 @@
       <tbody>
         <tr *ngFor="let film of films | filterByText:searchText:'title'">
           <td>{{film.episode_id}}</td>
-          <td><a (click)="setFilmDetails(film)">{{film.title}}</a></td>
+          <td (click)="setFilmDetails(film)">{{film.title}}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="row">
-    <app-movie-details *ngIf="filmSelectedForDetail !== undefined" [film]="filmSelectedForDetail">
+    <app-movie-details *ngIf="filmSelectedForDetail" [film]="filmSelectedForDetail">
 
     </app-movie-details>
   </div>
