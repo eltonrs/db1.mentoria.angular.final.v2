@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MovieListComponent } from './movie/movie-list/movie-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'list',
+    pathMatch: 'full',
+    component: MovieListComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
