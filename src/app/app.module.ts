@@ -9,13 +9,15 @@ import { MovieService } from './movie/movie.service';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 import { FilterByTextComponent } from './shared/filter-by-text/filter-by-text.pipe';
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     MovieDetailsComponent,
-    FilterByTextComponent
+    FilterByTextComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

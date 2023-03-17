@@ -12,6 +12,7 @@ export class MovieListComponent implements OnInit {
   searchText:string;
   films: FilmModel[] = [];
   filmsCount: number = 0;
+  showDetail: boolean = false;
 
   filmSelectedForDetail: FilmModel;
 
@@ -38,12 +39,17 @@ export class MovieListComponent implements OnInit {
     if (film === null)
       return;
 
-    console.log('Set details: ' + film.director);
-
-    //this.release_date = film.release_date;
-    //this.director = film.director;
-    //this.producer = film.producer;
+    console.log('Set film details.');
 
     this.filmSelectedForDetail = film;
+    this.showDetail = true;
+  }
+
+  // Esse método será "ligado" (lá pelo template) à propriedade evento decorada com @Output
+  turnDetailsHideByChildEvent(value: boolean) {
+
+    console.log('turnDetailsHideByChildEvent');
+
+    this.showDetail = value;
   }
 }

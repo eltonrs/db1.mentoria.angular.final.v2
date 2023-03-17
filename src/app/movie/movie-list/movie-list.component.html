@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="alert alert-secondary" role="alert">
-      <label for="filterByText">Filter by:&nbsp;</label>
-      <input type="text" id="filterByText" [(ngModel)]="searchText">
+      <label class="sr-only" for="filterByText">Filter by:&nbsp;</label>
+      <input class="form-control" type="text" id="filterByText" [(ngModel)]="searchText">
     </div>
     <!--bootstrap (themes): https://getbootstrap.com/docs/4.1/content/tables/ -->
     <table class="table table-striped table-bordered table-hover table-sm">
@@ -22,8 +22,10 @@
     </table>
   </div>
   <div class="row">
-    <app-movie-details *ngIf="filmSelectedForDetail" [film]="filmSelectedForDetail">
-
+    <app-movie-details
+      *ngIf="filmSelectedForDetail && showDetail"
+      [film]="filmSelectedForDetail"
+      (hideDetailsEvent)="turnDetailsHideByChildEvent(false)"> <!-- liga a propriedade evento @Output do filho com o método do pai -->
     </app-movie-details>
   </div>
 </div>

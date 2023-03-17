@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DB1 - Mentoria em Angular';
-  userName = 'Elton Souza';
 }
